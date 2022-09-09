@@ -47,13 +47,11 @@ module Bus
     private
 
     def get_near_stop_busses
-      service = Tdx::RealTimeNearStop.new(bus_number, bus_direction)
-      busses = service.busses
+      Tdx::RealTimeNearStop.new(bus_number, bus_direction).busses
     end
 
     def get_target_stop_ids
-      service = Tdx::StopOfRoute.new(bus_number, bus_direction)
-      stops = service.stops
+      stops = Tdx::StopOfRoute.new(bus_number, bus_direction).stops
       target_index = stops.index { |s| s['StopName']['Zh_tw'] == bus_station }
       stops[(target_index - 5)..(target_index - 3)].map do |stop|
         stop['StopID']
