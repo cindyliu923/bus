@@ -6,6 +6,7 @@ require './tdx/bus_request'
 require './tdx'
 
 module Tdx
+  # Taipei bus information for stop of route
   class StopOfRoute < BusRequest
     def stops
       data[0]['Stops']

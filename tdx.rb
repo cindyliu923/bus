@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # https://tdx.transportdata.tw/data-standard/description
 # https://tdx.transportdata.tw/api/basic
 module Tdx

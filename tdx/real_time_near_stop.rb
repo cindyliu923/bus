@@ -6,6 +6,7 @@ require './tdx/bus_request'
 require './tdx'
 
 module Tdx
+  # Taipei bus information for real time near stop
   class RealTimeNearStop < BusRequest
     def busses
       data

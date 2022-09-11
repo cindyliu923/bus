@@ -5,6 +5,7 @@ require 'json'
 require './tdx'
 
 module Tdx
+  # get access token for TDX
   class Token
     ENDPOINT = '/auth/realms/TDXConnect/protocol/openid-connect/token'
 

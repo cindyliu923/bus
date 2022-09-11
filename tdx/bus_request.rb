@@ -5,10 +5,11 @@ require 'json'
 require './tdx/token'
 
 module Tdx
+  # Taipei bus information
   class BusRequest
     TOKEN = Tdx::Token.new
 
-    attr_reader :bus_number, :bus_direction, :access_token
+    attr_reader :bus_number, :bus_direction
 
     def initialize(bus_number, bus_direction)
       @bus_number = bus_number
