@@ -7,8 +7,6 @@ require './tdx/token'
 module Tdx
   # Taipei bus information
   class BusRequest
-    TOKEN = Tdx::Token.new
-
     attr_reader :bus_number, :bus_direction
 
     def initialize(bus_number, bus_direction)
@@ -23,7 +21,7 @@ module Tdx
     end
 
     def access_token
-      TOKEN.access_token
+      Tdx::Token.access_token
     end
 
     def uri
