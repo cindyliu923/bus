@@ -17,9 +17,6 @@ gemfile do
   gem 'daemons'
 end
 
-# pwd  = File.dirname(File.expand_path(__FILE__))
-# file = pwd + '/notifier.rb'
-
 Daemons.run_proc('bus_notifier') do
   loop do
     notifier = Bus::Notifier.new
