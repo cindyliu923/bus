@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/inline'
+require 'net/http'
+require 'pry'
+require 'json'
+require 'dotenv/load'
+require 'daemons'
+require './notifier'
+
+# https://bundler.io/guides/bundler_in_a_single_file_ruby_script.html
+gemfile do
+  source 'https://rubygems.org'
+  gem 'terminal-notifier'
+  gem 'dotenv'
+  gem 'daemons'
+end
+
+# pwd  = File.dirname(File.expand_path(__FILE__))
+# file = pwd + '/notifier.rb'
+
+Daemons.run_proc('bus_notifier') do
+  loop do
+    notifier = Bus::Notifier.new
+    notifier.notify!
+    sleep 20
+  end
+end

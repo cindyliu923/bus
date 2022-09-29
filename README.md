@@ -21,26 +21,46 @@ copy your [TDX](https://tdx.transportdata.tw/user/dataservice/key) CLIENT_ID & C
 ### run script directly for testing
 
 ```
-ruby notifier.rb run
+./notify_service run
 ```
 
 ### run script in background
 
 ```
-ruby notifier.rb start
+./notify_service start
 ```
 
 ### stop background script
 
 ```
-ruby notifier.rb stop
+./notify_service stop
 ```
 
 ### run script with argument
 
 ```
-ruby notifier.rb run 672 1 喬治商職
-ruby notifier.rb start 672 1 喬治商職
+./notify_service run 672 1 喬治商職
+./notify_service start 672 1 喬治商職
 ```
 
-script default is run with 672 1 direction near 3-5 station for 博仁醫院，see notifier.rb
+### see status
+
+```
+./notify_service status
+```
+
+### more command
+
+```
+./notify_service
+```
+
+#### Note
+
+- if you can not execute `./notify_service` (got `permission denied: ./notify_service` error), change your file execute permission
+```
+chmod +x notify_service
+```
+  - [more about file permission command](https://linux.vbird.org/linux_basic/centos7/0210filepermission.php)
+
+- script default is run with 672 1 direction near 3-5 station for 捷運六張犁站(基隆路), see notifier.rb

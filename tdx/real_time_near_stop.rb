@@ -8,8 +8,14 @@ require './tdx'
 module Tdx
   # Taipei bus information for real time near stop
   class RealTimeNearStop < BusRequest
-    def busses
+    def bus_infos
       data
+    end
+
+    def stop_ids
+      bus_infos.map do |bus_info|
+        bus_info['StopID']
+      end
     end
 
     private
